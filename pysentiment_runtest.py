@@ -35,7 +35,7 @@ text = '''Lately, the Indonesian government has unleashed an array of policies t
     Of course, identifying the solutions is easier than implementing them. If the national government attempts to strip power from local governments, there is bound to be resistance. As Indonesia heads toward the 2014 elections and fundraising becomes an issue, candidates will stridently oppose reforms that would reduce future rents.
     Even if the government succeeds in reforming local policies, convincing investors could still prove an uphill battle. Daniel Poller, an international mining consultant, observes "natural resource companies think in decades, not years. They have to be able to trust the Indonesian government will not willy-nilly, once again, change the laws to suit their own purposes. Winning back that trust is not as simple as flipping a switch." That means the road to a better Rome will be a long one. But it certainly beats the alternative, which is just more fiddling.'''
 
-# 2개의 모델이 있는데, Harvard IV-4 모델
+# 2개의 모델이 있는데, 첫번쨰로 Harvard IV-4 모델
 hiv4 = HIV4()
 tokens = hiv4.tokenize(text)
 hiv4.get_score(tokens)
@@ -45,9 +45,9 @@ hiv4.get_score(tokens)
 #  'Positive': 70,
 #  'Subjectivity': 0.30406852183282973} # 주관적인지 객관적인지. 
 # 
-# 주관적이라면 극성을 분석하여 긍적적인지 부정적인지를 체크한다. 
-# 극성 데이터는 0에 가까우면 한쪽으로 치우침이 없다. +1이나 -1로 치우치면 극성이 크다.
-# +1: 긍정 측면이 강한 글, -1: 부정 측면이 강한 글 
+# 입력 text가 주관적 문장이라면 극성을 분석하여 긍적적인지 부정적인지를 체크한다. 
+# 극성 데이터는 0에 가까울 경우는 한쪽으로 치우침이 없음을 보여준다. +1이나 -1로 치우치면 극성이 크다.
+# +1: 긍정 측면이 강한 글, -1: 부정 측면이 강한 글 - 이 된다. 
 
 # Loughran and McDonald 모델 
 lm = LM()
